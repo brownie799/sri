@@ -1,0 +1,26 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = {
+    'Product Name': ['computer', 'sockets', 'laptops', 'cpu', 'keyboards', 'chip', 'wires'],
+    'Number': [100, 150, 200, 250, 243, 350, 450],
+    'Defects': [5, 10, 8, 9, 3, 7, 9],
+    'Non-Defects': [95, 140, 192, 234, 89, 98, 95]
+}
+
+df = pd.DataFrame(data)
+
+display(df)
+ax = df.plot(x='Product Name', kind='bar', stacked=True,
+             y=['Defects', 'Non-Defects'], figsize=(10, 6))
+plt.title('defects and Non-Defects by Product')
+plt.xlabel('Product NAME')
+plt.ylabel('Number of Units')
+plt.legend(title='Status')
+plt.show()
+import pandas as pd
+import matplotlib.pyplot as plt
+ax = df.plot(x='Product Name', kind='bar', stacked=True,
+             y=['Defects', 'Non-Defects'], figsize=(6, 4))  # Reduced figsize
+
+ plt.show()
